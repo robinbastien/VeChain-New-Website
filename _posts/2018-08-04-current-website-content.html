@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.css" integrity="sha384-BTL0nVi8DnMrNdMQZG1Ww6yasK9ZGnUxL1ZWukXQ7fygA1py52yPp9W4wrR00VML" crossorigin="anonymous">
+        <style>
+/*--------------------------------------------------------------------------------------------- * Copyright (c) Microsoft Corporation. All rights reserved. * Licensed under the MIT License. See License.txt in the project root for license information. *--------------------------------------------------------------------------------------------*/ body { font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback"; font-size: 14px; padding: 0 26px; line-height: 22px; word-wrap: break-word; } #code-csp-warning { position: fixed; top: 0; right: 0; color: white; margin: 16px; text-align: center; font-size: 12px; font-family: sans-serif; background-color:#444444; cursor: pointer; padding: 6px; box-shadow: 1px 1px 1px rgba(0,0,0,.25); } #code-csp-warning:hover { text-decoration: none; background-color:#007acc; box-shadow: 2px 2px 2px rgba(0,0,0,.25); } body.scrollBeyondLastLine { margin-bottom: calc(100vh - 22px); } body.showEditorSelection .code-line { position: relative; } body.showEditorSelection .code-active-line:before, body.showEditorSelection .code-line:hover:before { content: ""; display: block; position: absolute; top: 0; left: -12px; height: 100%; } body.showEditorSelection li.code-active-line:before, body.showEditorSelection li.code-line:hover:before { left: -30px; } .vscode-light.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(0, 0, 0, 0.15); } .vscode-light.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(0, 0, 0, 0.40); } .vscode-light.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-dark.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 255, 255, 0.4); } .vscode-dark.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 255, 255, 0.60); } .vscode-dark.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-high-contrast.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 160, 0, 0.7); } .vscode-high-contrast.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 160, 0, 1); } .vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before { border-left: none; } img { max-width: 100%; max-height: 100%; } a { text-decoration: none; } a:hover { text-decoration: underline; } a:focus, input:focus, select:focus, textarea:focus { outline: 1px solid -webkit-focus-ring-color; outline-offset: -1px; } hr { border: 0; height: 2px; border-bottom: 2px solid; } h1 { padding-bottom: 0.3em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; } h1, h2, h3 { font-weight: normal; } h1 code, h2 code, h3 code, h4 code, h5 code, h6 code { font-size: inherit; line-height: auto; } table { border-collapse: collapse; } table > thead > tr > th { text-align: left; border-bottom: 1px solid; } table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table > tbody > tr > td { padding: 5px 10px; } table > tbody > tr + tr > td { border-top: 1px solid; } blockquote { margin: 0 7px 0 5px; padding: 0 16px 0 10px; border-left-width: 5px; border-left-style: solid; } code { font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback"; font-size: 14px; line-height: 19px; } body.wordWrap pre { white-space: pre-wrap; } .mac code { font-size: 12px; line-height: 18px; } pre:not(.hljs), pre.hljs code > div { padding: 16px; border-radius: 3px; overflow: auto; } /** Theming */ pre code { color: var(--vscode-editor-foreground); } .vscode-light pre:not(.hljs), .vscode-light code > div { background-color: rgba(220, 220, 220, 0.4); } .vscode-dark pre:not(.hljs), .vscode-dark code > div { background-color: rgba(10, 10, 10, 0.4); } .vscode-high-contrast pre:not(.hljs), .vscode-high-contrast code > div { background-color: rgb(0, 0, 0); } .vscode-high-contrast h1 { border-color: rgb(0, 0, 0); } .vscode-light table > thead > tr > th { border-color: rgba(0, 0, 0, 0.69); } .vscode-dark table > thead > tr > th { border-color: rgba(255, 255, 255, 0.69); } .vscode-light h1, .vscode-light hr, .vscode-light table > tbody > tr + tr > td { border-color: rgba(0, 0, 0, 0.18); } .vscode-dark h1, .vscode-dark hr, .vscode-dark table > tbody > tr + tr > td { border-color: rgba(255, 255, 255, 0.18); } 
+</style>
+<style>
+/* Tomorrow Theme */ /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */ /* Original theme - https://github.com/chriskempson/tomorrow-theme */ /* Tomorrow Comment */ .hljs-comment, .hljs-quote { color: #8e908c; } /* Tomorrow Red */ .hljs-variable, .hljs-template-variable, .hljs-tag, .hljs-name, .hljs-selector-id, .hljs-selector-class, .hljs-regexp, .hljs-deletion { color: #c82829; } /* Tomorrow Orange */ .hljs-number, .hljs-built_in, .hljs-builtin-name, .hljs-literal, .hljs-type, .hljs-params, .hljs-meta, .hljs-link { color: #f5871f; } /* Tomorrow Yellow */ .hljs-attribute { color: #eab700; } /* Tomorrow Green */ .hljs-string, .hljs-symbol, .hljs-bullet, .hljs-addition { color: #718c00; } /* Tomorrow Blue */ .hljs-title, .hljs-section { color: #4271ae; } /* Tomorrow Purple */ .hljs-keyword, .hljs-selector-tag { color: #8959a8; } .hljs { display: block; overflow-x: auto; color: #4d4d4c; padding: 0.5em; } .hljs-emphasis { font-style: italic; } .hljs-strong { font-weight: bold; }
+</style>
+<style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+    <body>
+        <h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li>Vechain</li>
+<li>Governance</li>
+<li>Technology</li>
+<li>Economic Model</li>
+<li>Featured Supporters</li>
+<li>Enterprise Solutions</li>
+<li>Use Case</li>
+<li>Core Team</li>
+<li>Roadmap</li>
+</ul>
+<hr>
+<h2 id="vechainthor---the-blockchain-x">VeChainThor - The Blockchain X</h2>
+<p>VeChain is a leading global enterprise level public blockchain platform.</p>
+<p>VeChain aims to connect blockchain technology to the real world by providing a comprehensive governance structure, a robust economic model as well as advanced IoT integration, and pioneers in real world applications.</p>
+<p><a href="https://cdn.vechain.com/vechainthor_development_plan_and_whitepaper_en_v1.0.pdf">Development Plan &amp; Whitepaper</a></p>
+<p><a href="https://github.com/vechain/thor">VeChainThor GitHub</a></p>
+<hr>
+<h2 id="comprehensive-governance-structure">Comprehensive Governance Structure</h2>
+<p>A well governed foundation is the key to longevity, growth and stability. The Board of Steering Committee oversees the various functional committees within a decentralized foundation. The board members, through a governing agency, ultimately guide units towards cohesive goals and enables collaboration, efficiency, and output across channels.</p>
+<p>The Board of Steering Committee is the governing body of VeChain Foundation. It represents the balanced interests of the VeChain blockchains stakeholders.</p>
+<hr>
+<h2 id="advanced-technology">Advanced Technology</h2>
+<ul>
+<li>Built-in Governance Tools</li>
+<li>Proof of Authority</li>
+<li>High Scalability &amp; Sidechain Capability</li>
+<li>State-of-the-art IoT Solutions</li>
+<li>Flexibility for Real Enterprise Use</li>
+</ul>
+<hr>
+<h2 id="robust-economic-model">Robust Economic Model</h2>
+<p>A robust two-coin system provides flexibility to create both a store of value, to be used as smart payment currency, and the appropriate means of managing the costs of using the VeChainThor protocol</p>
+<p>Appropriate incentives for everyone in the VeChain ecosystem</p>
+<hr>
+<h2 id="featured-supporters">Featured Supporters</h2>
+<ul>
+<li><a href="http://www.draperdragon.com/companies-en">Draper Dragon</a></li>
+<li><a href="http://fenbushi.vc/index_en.html">Fenbushi Capital</a></li>
+<li><a href="http://future-cap.com/">FutureCap</a></li>
+<li><a href="https://breyercapital.com/portfolio/">Breyer Capital</a></li>
+<li><a href="https://www.dnvgl.com/news/dnv-gl-partners-with-blockchain-expert-vechain-to-increase-transparency-from-the-factory-to-the-consumer-110284">DNVGL</a></li>
+</ul>
+<hr>
+<h2 id="enterprise-solutions">Enterprise Solutions</h2>
+<p>VeChain has accumulated extensive experience in an ever expanding list of industries including pharmaceuticals, liquor, automobile, luxury goods, retail, logistics, supply chain, food and cold storage and more.</p>
+<hr>
+<h2 id="use-case">Use Case</h2>
+<h3 id="cold-chain-logistics">Cold-chain Logistics</h3>
+<p>VeChain’s cold-chain logistics solution uses proprietary IoT devices to track key metrics throughout the entire journey. VeChain embeds data management and sharing in every process, making cold-chain logistics transparent, regulated, secure and reliable.</p>
+<p><strong>[Link to video here]</strong></p>
+<h3 id="automobile">Automobile</h3>
+<p>VeChain creates a digital passport of a vehicle recording all data including repair history, insurance, registration and even driver behaviour throughout its lifecycle. VeChain puts data into the hands of owners, making data management comprehensive, accessible and transparent.</p>
+<p><strong>[Link to video here]</strong></p>
+<h3 id="medical--healthcare">Medical &amp; Healthcare</h3>
+<p>VeChain’s blockchain solution can track end-to-end production processes and use of medical device. With the patient’s authorization, VeChain can enable patients to securely share their biometric data with their doctors to enable realtime monitoring. VeChain makes the production and use of medical devices safer, better regulated, efficient...</p>
+<p><strong>[Link to video here]</strong></p>
+<h3 id="luxury--fashion">Luxury &amp; Fashion</h3>
+<p>VeChain embeds smartchips within luxury goods, so brands can monitor their sales channels in realtime to prevent illegal overstock trading. Meanwhile, consumers can verify the authenticity of the luxury products. VeChain puts control back into the hands of brands, making luxury trail transparent, seamless and data-driven.</p>
+<p><strong>[Link to video here]</strong></p>
+<p><a href="https://www.vechain.org/#usecase">More</a></p>
+<hr>
+<h2 id="vechain-core-team">VeChain Core Team</h2>
+<h3 id="sunny-lu">Sunny Lu</h3>
+<p><em>Chief Executive Officer</em></p>
+<p>Sunny was graduated from Shanghai Jiao Tong University, majored in Electronics and Communication Engineering. He has been served as IT Executive in Fortune 500 companies over 13 years, former CIO of LV China. He started VeChain project in 2015.</p>
+<h3 id="jay-zhang">Jay Zhang</h3>
+<p><em>Chief Financial Officer</em></p>
+<p>Jay has worked for PwC and Deloitte as senior manager over 14 years. He joined VeChain in 2015 as the leader of Blockchain governance framework design and digital assets management framework establishment.</p>
+<h3 id="kevin-feng">Kevin Feng</h3>
+<p><em>Chief Operation Officer</em></p>
+<p>Kevin Feng has over 12 years experiences of consulting and assurance services in cybersecurity, privacy and emerging technology at PwC. Besides, Kevin has been driving the development of blockchain services of PwC CN/HK region. In January 2018, Kevin joined VeChain as COO</p>
+<h3 id="jianliang-gu">Jianliang Gu</h3>
+<p><em>Chief Tech Officer</em></p>
+<p>Jianliang was graduated from Shanghai University with master degree majored in Cybernetics. He was working in TCL communication technology as Technical Director. He has more than 16 years' experience in both hardware and software of embedded system development and management.</p>
+<h3 id="richard-fu">Richard Fu</h3>
+<p><em>VP-Marketing</em></p>
+<p>Richard has over 20 years' working experience in multinational enterprises such as Shangri-la Group and LVHM specializing in sales and marketing. He joined VeChain as director of PR and marketing.</p>
+<h3 id="chin-qian">Chin Qian</h3>
+<p><em>VP-Sales &amp; Channel</em></p>
+<p>Chin worked for HP from 2004 to 2016 and accumulated rich experience in marketing and project management. He joined VeChain in 2017 as director of business partner recruitment and management.</p>
+<h3 id="bin-qian">Bin Qian</h3>
+<p><em>Chief Blockchain Dev</em></p>
+<p>Bin has over 10 years' experience in Mobile application development industry, specializing in developing Internet applications based real-time communication system. He is definitely P2P network technology expert.</p>
+<h3 id="peter-zhou">Peter Zhou</h3>
+<p><em>Chief Scientist</em></p>
+<p>Peter was involved in projects funded by the European Commission and Academy of Finland when working as a postdoctoral researcher at the University of Kent, UK as well as a senior research scientist at the University of Oulu, Finland.</p>
+<h3 id="jerome-grilleres">Jerome Grilleres</h3>
+<p><em>VeChain Europe GM</em></p>
+<p>Jerome holds an MBA from London Business School and a MSc in Computer Science. He is from Barclays France and has 8 years’ experience in Business Strategy and Development in Retail Banking and 6 years in Developing Real Time trading application in Investment Banks.</p>
+<h3 id="sarah-nabaa">Sarah Nabaa</h3>
+<p><em>VeChain Singapore GM</em></p>
+<p>Prior to joining VeChain in 2017, Sarah's background was in business development. After 3 years of proprietary trading, she bootstrapped and sold her e-commerce business and began consulting startups and SMEs on their digital strategies and transformation. She graduated from NTU with a Bachelor in Electrical &amp; Electronic Engineering.</p>
+<h3 id="scott-brisbin">Scott Brisbin</h3>
+<p><em>General Counsel</em></p>
+<p>Scott is a well-known lawyer whose clients include Rolling Stones and lead singer Mick Jagger, Disney, MGM etc., Scott joined the MSK law firm after graduated and since 1989 began as a legal partner. In 2016, Scott joined VeChain working for VeChain's legal security, organizational structure and property escort. He has an absolute authority on the experience of company's legal affairs and patent maintenance.</p>
+<h3 id="noah-huo">Noah Huo</h3>
+<p><em>Chief Marketing Officer</em></p>
+<p>Noah has over 5 years experiences of consulting and assurance services in FinTech, cybersecurity and blockchain technology. He involved in financial crime detection and prevention in NAB before he played a critical role in the blockchain development in PwC CN/HK. In February 2018, Noah joined VeChain to be in charge of PR management.</p>
+<hr>
+<h2 id="roadmap">Roadmap</h2>
+<p><strong>2015.06</strong>
+TPOC, initial VeChain design</p>
+<p><strong>2015.11</strong>
+TPOC approved, VeChain v0.1 development started</p>
+<p><strong>2016.06</strong>
+VeChain v0.1 launched, 1st business case go-live</p>
+<p><strong>2016.09</strong>
+VeChain v1.5 launched, VeChain Dashboard, iOS app go-live</p>
+<p><strong>2016.11</strong>
+VeChain v2.0 launched, more smart contract templates</p>
+<p><strong>2017.05</strong>
+VeChain v3.0 initiated</p>
+<p><strong>2017.11</strong>
+VeChain Foundation 1st Steering Committee and Advisory Board formed</p>
+<p><strong>2017.12</strong>
+VeThor and the economic model preview published</p>
+<p><strong>2018.Q2</strong>
+VeChainThor Blockchain Launch, VeChain Wallet with VeThor Forge Function</p>
+<p><strong>2018.Q4</strong>
+VeChain Crosschain, Sidechain Technology</p>
+<p><strong>2019</strong>
+VeChainThor Ecosystem Expansion</p>
+<hr>
+<h2 id="contact">Contact</h2>
+<p>Business Development: <a href="mailto:bd@vechain.com">bd@vechain.com</a></p>
+<p>Recruitment: <a href="mailto:hr@vechain.com">hr@vechain.com</a></p>
+<p>VeResearch Program: <a href="mailto:veresearch@vechain.com">veresearch@vechain.com</a></p>
+<p>Media: <a href="mailto:press@vechain.com">press@vechain.com</a></p>
+<p>Others: <a href="mailto:info@vechain.com">info@vechain.com</a></p>
+<p>+65 (0) 9037 9543
+7 Straits View, Marina One East Tower, #05-01, Singapore, 018936</p>
+
+    </body>
+    </html>
