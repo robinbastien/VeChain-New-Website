@@ -27,6 +27,7 @@ logo: "images/logo.svg"
 markdown: kramdown
 sass:
   sass_dir: _sass
+  style: compact
 plugins:
   - jekyll-feed
 
