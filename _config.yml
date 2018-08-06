@@ -33,7 +33,7 @@ plugins:
 
 collections_dir: collections
 collections:
-- page_sections
+- team
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
