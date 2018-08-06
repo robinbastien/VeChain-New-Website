@@ -1,0 +1,7 @@
+.grid {
+  @include grid-container;
+}
+
+.grid__col-1 { @include grid-column(1); }
+.grid__col-2 { @include grid-column(2); }
+.grid__col-3 { @include grid-column(3); }
