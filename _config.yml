@@ -31,6 +31,10 @@ sass:
 plugins:
   - jekyll-feed
 
+collections_dir: collections
+collections:
+- page_sections
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
