@@ -31,4 +31,3 @@ If you get lost, try following the [full jekyll installation instructions](https
 ```bash
 jekyll serve
 ```
-
