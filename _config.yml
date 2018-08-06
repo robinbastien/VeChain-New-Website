@@ -24,6 +24,7 @@ github_username:  vechain
 logo: "images/logo.svg"
 
 # Build settings
+styleurl: assets/style.css
 markdown: kramdown
 sass:
   sass_dir: _sass
