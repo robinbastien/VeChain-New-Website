@@ -22,6 +22,7 @@ cd VeChain-New-Website
 bundle install
 
 # Install latest version of Neat SCSS grid
+# CD in _sass directory
 neat install
 ```
 
